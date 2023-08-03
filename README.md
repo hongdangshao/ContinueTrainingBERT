@@ -1,6 +1,20 @@
 # ContinueTrainingBERT
 Continue Training BERT with transformers  
-Continue Training BERT in the vertical field
+Continue Training BERT in the vertical field  
+This repository is just a simple example of bert pre-training   
+Welcome everyone to improve this repository with me
+## Roadmap
+- [x] load pretrained weight
+- [x] continue training
+  - [x] Using transformers DataCollator class
+  - [x] Using transformers Tokenizer class
+  - [x] Using transformers Model class
+  - [ ] Using transformers Trainer class
+- [ ] Implement tokenizer class
+- [ ] Implement bert model structure (class)
+  - [ ] Implement bert embedding、encoder and pooler structure
+
+---
 # Quickstart
 ### 1. Install transformers
 `pip install transormers`
@@ -38,3 +52,10 @@ Continue Training \t BERT with transformers\n
 - outputs
     - loss                # masked_lm_loss
     - logits              # prediction_score
+
+---
+# reference
+- https://github.com/huggingface/transformers
+- https://github.com/codertimo/BERT-pytorch
+- https://github.com/wzzzd/pretrain_bert_with_maskLM
+- https://github.com/circlePi/Pretraining-Yourself-Bert-From-Scratch
