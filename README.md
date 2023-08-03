@@ -2,7 +2,7 @@
 Continue Training BERT with transformers  
 Continue Training BERT in the vertical field  
 This repository is just a simple example of bert pre-training   
-##🎉Welcome everyone to improve this repository with me 🎉
+## 🎉Welcome everyone to improve this repository with me 🎉
 ## Roadmap
 - [x] load pretrained weight
 - [x] continue training
