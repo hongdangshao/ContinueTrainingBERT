@@ -19,7 +19,7 @@ Continue Training \t BERT with transformers\n
 - inputs
   - input_ids              # [sentence0, sentence1] the original index based on the tokenizer
   - token_type_ids         # [0, 1] zero represent sentence0
-  - attention_mask         # [1, 1] unused, Even with a mask, it will still be noticed during training.
+  - attention_mask         # [1, 1] The areas that have been padded will be set to 0
   - labels                 # [....] masked, real index
   - next_sentence_label    # [0 or 1] zero represent sentence0 and sentence1 have no contextual relationship
   - ...
@@ -31,8 +31,8 @@ Continue Training \t BERT with transformers\n
 ## 2.Using transformers model [BertForMaskedLM](https://huggingface.co/docs/transformers/v4.31.0/en/model_doc/bert#transformers.BertForMaskedLM)
 - inputs
     - input_ids
-    - token_type_ids      # unused
-    - attention_mask      # unused
+    - token_type_ids      # [1,1] unused
+    - attention_mask      
     - labels
     - ...
 - outputs
