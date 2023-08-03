@@ -125,14 +125,8 @@ class BERTTrainer():
         print("EP%d_%s, avg_loss=" % (epoch, str_code), avg_loss / len(data_iter))
         # , "total_acc=",total_correct * 100.0 / total_element)
 
-    def save(self, epoch):
-        """
-        :param epoch: current epoch number
-        :return: final_output_path
-        """
-        output_path = self.path_model_save + 'epoch_{}/'.format(epoch)
-        # self.model.save_pretrained(output_path)
-        torch.save(self.model.module.bert.cpu(), output_path)
+    def save(self):
+        output_path = self.path_model_save
+        self.model.module.bert.cpu().save_pretrained(output_path)
+        # torch.save(self.model.module.bert.cpu(), output_path)
         self.model.module.bert.to(self.device)
-        print("EP:%d Model Saved on:" % epoch, output_path)
-        return output_path
