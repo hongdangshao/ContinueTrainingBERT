@@ -42,10 +42,11 @@ class BERTDataset(Dataset):
     def __getitem__(self, item):
         t1, t2, is_next_label = self.random_sent(item)
         inputs = self.tokenizer(t1, t2, max_length=512, add_special_tokens=True, padding="max_length", truncation=True, return_tensors='pt')
-        input_ids = inputs['input_ids'].squeeze(0)
+        input_ids0 = inputs['input_ids']
         attention_mask = inputs['attention_mask'].squeeze(0)
         token_type_ids = inputs['token_type_ids'].squeeze(0)
-        labels = self.data_collator([input_ids])['labels'].squeeze(0).squeeze(0)
+        labels = self.data_collator([input_ids0])['labels'].squeeze(0).squeeze(0)
+        input_ids = self.data_collator([input_ids0])['input_ids'].squeeze(0).squeeze(0)
         next_sentence_label = torch.tensor([is_next_label], dtype=torch.long)
         output = {"input_ids": input_ids,
                   "attention_mask": attention_mask,

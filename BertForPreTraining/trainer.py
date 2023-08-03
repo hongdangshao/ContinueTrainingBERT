@@ -6,8 +6,8 @@ import torch
 import torch.nn as nn
 from torch.optim import Adam
 import tqdm
-from optim_schedule import ScheduledOptim
-from config import BERTConfig
+from ContinueTrainingBERT.utils.optim_schedule import ScheduledOptim
+from ContinueTrainingBERT.utils.config import BERTConfig
 from torch.utils.data import DataLoader
 from transformers import BertForPreTraining
 
@@ -23,10 +23,7 @@ class BERTTrainer:
         # Setup cuda device for BERT training, argument -c, --cuda should be true
         cuda_condition = torch.cuda.is_available() and config.with_cuda
         self.device = torch.device("cuda:0" if cuda_condition else "cpu")
-        # This BERT model will be saved every epoch
-        # self.bert = bert
         # Initialize the BERT Language Model, with BERT model
-        # self.model = BERTLM(bert, vocab_size).to(self.device)
 
         self.model = BertForPreTraining.from_pretrained(config.initial_pretrain_model).to(self.device)
 
