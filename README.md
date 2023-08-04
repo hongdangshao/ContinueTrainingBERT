@@ -2,14 +2,14 @@
 Continue Training BERT with transformers  
 Continue Training BERT in the vertical field  
 This repository is just a simple example of bert pre-training   
-##🎉Welcome everyone to improve this repository with me 🎉
+## 🎉Welcome everyone to improve this repository with me 🎉
 ## Roadmap
 - [x] load pretrained weight
 - [x] continue training
   - [x] Using transformers DataCollator class
   - [x] Using transformers Tokenizer class
   - [x] Using transformers Model class
-  - [ ] Using transformers Trainer class
+  - [x] [Using transformers Trainer class](https://github.com/iGangao/ContinueTrainingBERT/blob/master/trainer_to_train.py)
 - [ ] Implement tokenizer class
 - [ ] Implement bert model structure (class)
   - [ ] Implement bert embedding、encoder and pooler structure
